@@ -1,0 +1,24 @@
+Ex 1: Schimbarea bazei
+Pentru a trece dintr o baza in alta am folosit
+ca baza intermediara baza 10.
+Am determinat lungimea stringului, am l am parcurs
+si am transformat fiecare caracter in numarul 
+corespunzator pentru a le inmulti ulterior cu 
+puteri ale lui b1.
+Numarul obtinul se imparte la b2 si inversul vectorului
+codificat este transformarea in baza respectiva.
+
+EX 2: Parcurgerea matricei
+Se va face in functie de paritatea/ imparitatea
+numarului dat.
+In functie de aceasta deplasarea pe diagonala este 
+de sus in jos sau de jos in sus.
+Am folosit niste indici pe care ii incrementez sau 
+decrementez.
+
+EX 3: Codul Morse
+Decodificarea : in functie de . sau - se parcurge 
+arborele in stanga sau in dreapta.
+Codificarea : se parcurge recursiv arborele.
+
+EX 4: X si O
