@@ -1,24 +1,84 @@
-Ex 1: Schimbarea bazei
-Pentru a trece dintr o baza in alta am folosit
-ca baza intermediara baza 10.
-Am determinat lungimea stringului, am l am parcurs
-si am transformat fiecare caracter in numarul 
-corespunzator pentru a le inmulti ulterior cu 
-puteri ale lui b1.
-Numarul obtinul se imparte la b2 si inversul vectorului
-codificat este transformarea in baza respectiva.
+READ ME
 
-EX 2: Parcurgerea matricei
-Se va face in functie de paritatea/ imparitatea
-numarului dat.
-In functie de aceasta deplasarea pe diagonala este 
-de sus in jos sau de jos in sus.
-Am folosit niste indici pe care ii incrementez sau 
-decrementez.
+CERINTA 1:
+function P = ValoriPolinoame(d, s, val_lambda)
 
-EX 3: Codul Morse
-Decodificarea : in functie de . sau - se parcurge 
-arborele in stanga sau in dreapta.
-Codificarea : se parcurge recursiv arborele.
+Se calculeaza lungimea diagonalei si se intializeaza
+cu 0 polinomul.
+Relatia descrisa in enunt este transpusa in octave.
+Se obtine valoarea fiecarui polinom din sirul de 
+polinoame.
 
-EX 4: X si O
+CERINTA 2:
+function numvp = NrValProprii(d, s, val_lambda)
+
+Pentru aceasta cerinta vom folosi mai intai 
+functia anterioara si apoi sirul lui Sturn.
+Se parcurge polinomul, iar daca doua valori succesive 
+au semn contrar, atunci se creste numarul de valori 
+proprii.
+De asemenea, daca o valoare este 0 se va verifica 
+ca vecinii ei sa aiba semn contrar.
+
+CERINTA 3:
+function[limita_inf, limita_sup] = LimiteValProprii(d,s)
+
+Se foloseste teorema lui Gershgorin.
+Se initializeaza limita inferioara si cea superioara,
+cu infinit,respectiv minus infinit.
+Se parcurge cu un for de la 1 la n (lungimea
+diagonalei), se folosesc niste variabile auxiliare
+pentru a memora si schimba valorile limitelor 
+(lambdamax,lambdamin).
+
+CERINTA 4:
+function r = IntervaleValProprii(d, s, m)
+
+Se realizeaza pe baza algoritmului descris in pdf.
+Calculeaza intervalele intre care se afla valorile 
+proprii.
+Se folosesc functiile anterioare.
+Pentru determinarea elementelor r k+1 , k = m : −1 : 1
+se parcurg urmatoriii pasi:
+
+1. Se calculeaza mijlocul intervalului [r 1 , r k+2 ] 
+folosind relatia:	mij = (rk+2 + r1 )/2
+
+2. Se calculeaza lungimea intervalului [mij, r k+2 ) 
+folosind relatia :	h = rk+2 − mij 
+
+3. Se calculeaza numarul de valori proprii mai mici 
+decat valoarea mij numvp = N rV alP roprii(d, s, mij)
+
+4. Se actualizeaza valoarea mij astfel:
+h = h/2
+daca numvp < k atunci mij = mij + h
+daca numvp > k atunci mij = mij − h
+
+5. Se repeta algoritmul de la pasul 3 pana cand numvp = k.
+
+6. Se obtine astfel valoarea petru rk+1 :
+rk+1 = mij
+
+CERINTA 5:
+function vp = CalculezValProprii(d, s, m, tol)
+
+Se vor folosi functiile valoripolinoame si 
+intervalevaloriproprii.
+Vom integra in aceasta cerinta si metoda bisectiei
+descrisa la laborator.
+
+CERINTA 6:
+function [valp vecp] = PutereInv(d, s, h, y, maxIter, tol)
+
+Functia foloseste in principal algoritmul lui Thomas 
+pentru reducerea treptata a sistemului nostru matriceal 
+la un sistem simplu.
+Acesta va fi folosit in metoda puterii inverse , fara 
+a compune matricea A.
+Pentru aceasta vom avea ca modificare in metoda puterii 
+schimbarea valorii diagonalei : din diagonala principala 
+se va scadea din fiecare element h.
+
+
+
